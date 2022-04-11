@@ -6,14 +6,14 @@ struct node
     struct node *next;
 };
 
-void travarse(struct node *ptr)
+struct node travarse(struct node *ptr)
 {
    while(ptr!=NULL){
        printf("element : %d\n",ptr->data);
        ptr=ptr->next;
    }
 }
-void deleteAtFirst(struct node *head)
+struct node *deleteAtFirst(struct node *head)
 {
   struct node *ptr=head;
   
@@ -48,7 +48,7 @@ int main(){
    printf("linked before delete\n");
    travarse(head);
 
-   deleteAtFirst(head);
+   head=deleteAtFirst(head);
    printf("linked after delete\n");
    travarse(head);
 

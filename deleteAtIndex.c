@@ -5,15 +5,32 @@ struct node{
     struct node * next;
 
 };
-void linkedlisttraversal( struct node * ptr)
+struct node linkedlisttraversal( struct node * ptr)
 {
     while (ptr!=NULL)
     {
         printf("Element : %d\n",ptr->data);
         ptr=ptr->next; 
     }
-    
 }
+
+    struct node *deleteAtIndex(struct node *head,int index){
+     struct node *p=head;
+     struct node *q=p->next;
+
+     for (int i = 0; i < index-1; i++)
+     {
+         p=p->next;
+         q=q->next;
+     }
+     p->next=q->next;
+     free(q);
+     return head;
+     
+    }
+
+
+
 int main(){
    struct node * head;
     struct node * second;
@@ -34,7 +51,12 @@ third->next=four;
 
 four->data=11;
 four->next=NULL;
+printf("linked before delete\n");
+linkedlisttraversal(head);
 
+head=deleteAtIndex(head,2);
+
+printf("linked after delete\n");
 linkedlisttraversal(head);
 
      
