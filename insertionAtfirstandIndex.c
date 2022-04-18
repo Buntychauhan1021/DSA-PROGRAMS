@@ -43,7 +43,7 @@ struct node *insertAtIndex(struct node *head,int data,int index)
     struct node *p=head ;
     int i=0;
      
-    while (i!=index-1)
+    while (i!=index-2)
     {
        p=p->next;
        i++;
@@ -73,7 +73,9 @@ int main(){
     third->data=11;
     third->next=NULL; 
 
-   head=insertAtFirst(head,98);
+    linkedlisttraversal(head);
+
+   head=insertAtIndex(head,98,2);
    // head=insertAtEnd(head,78)
   
     linkedlisttraversal(head);

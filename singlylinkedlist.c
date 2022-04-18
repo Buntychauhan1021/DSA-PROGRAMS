@@ -10,6 +10,7 @@
      struct node *ptr ,*head=NULL,*p;
      int info;
      int index;
+     int element;
      
      int ch;
      while (1)
@@ -18,9 +19,10 @@
          printf("1.insert at begining \n");
          printf("2.traversing\n");
          printf("3.insert at end\n");
-         printf("4.enter element between node\n");
-         printf("5.search data\n5");
-         printf("6.exit\n");
+         printf("4.enter element after index\n");
+         printf("5.search data\n");
+         printf("6.insert after element\n");
+         printf("7.exit\n");
          printf("enter  the choice\n");
          scanf("%d",&ch);
          switch (ch)
@@ -52,7 +54,7 @@
                 printf("element :%d\n",ptr->data);
                 ptr=ptr->next;
             }
-
+            break;
             
         case 3:
          printf("enter the data\n");
@@ -115,6 +117,49 @@
         printf("data not found\n");
         }
          break;
+
+
+         case 6:
+         
+         printf("Enter element after which you want to insert the element\n");
+         scanf("%d",&element);
+         ptr=(struct node*)malloc(sizeof(struct node));
+         if (head==NULL)
+         {
+          printf("no element");
+         }
+         p=head;
+         while (p!=NULL)
+         {
+             if (p->data==element)
+            break;
+            p=p->next;
+             
+         }
+
+         if (p==NULL)
+         {
+            printf("element not found\n");
+         }
+         else
+         {
+             printf("enter the data in node\n");
+             scanf("%d",&info);
+             ptr->data=info;
+             ptr->next=p->next;
+             p->next=ptr;
+             
+            break;
+
+         }
+         
+         
+
+
+
+
+
+         
          default:
          printf("enter the valid choice\n");
              break;

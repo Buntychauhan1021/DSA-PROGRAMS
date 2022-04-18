@@ -14,13 +14,13 @@ struct node linkedlisttraversal( struct node * ptr)
     }
 }
 
-    struct node *insertAfterNode(struct node *head,struct node *previousnode,int data){
+    struct node *insertAfterNode(struct node *head,struct node *previousnode,int data)
+    {
 
          struct node *ptr =(struct node *)malloc(sizeof(struct node));
          ptr ->data=data;
          ptr->next=previousnode->next;
          previousnode->next=ptr;
-
         return head;
 
     }

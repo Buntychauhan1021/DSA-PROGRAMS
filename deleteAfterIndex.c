@@ -13,7 +13,6 @@ struct node traverse(struct node *ptr)
     ptr=ptr->next;
 }
 }
-
 int main(){
     struct node *head;
     struct node *second;
@@ -38,7 +37,7 @@ int main(){
     four->next=NULL;
 //   int n;
 //     printf("enter the choice\n");
-//     scanf("%d",n);
+//     scanf("%d",n); 
 //    switch(n){
 //        case 1:
        printf("traverse\n");
