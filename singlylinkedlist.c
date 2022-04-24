@@ -123,7 +123,7 @@
          
          printf("Enter element after which you want to insert the element\n");
          scanf("%d",&element);
-         ptr=(struct node*)malloc(sizeof(struct node));
+         ptr=(struct node*)(malloc(sizeof(struct node)));
          if (head==NULL)
          {
           printf("no element");
