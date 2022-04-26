@@ -41,7 +41,7 @@ void main()
 		break;
     }
 
-    
+      
 }
 }
 void insertAtBeg(node **head,int data){
