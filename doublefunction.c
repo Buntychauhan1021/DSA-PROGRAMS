@@ -15,6 +15,7 @@ void traverseFromEnd(node *tail);
 void insertAfterSpecificElement(node *head, node **tail, int data);
 void deleteAtFirst(node **head, node **tail);
 void deleteAtEnd(node **head, node **tail);
+void search(node *head, int data);
 
 node *head = NULL;
 node *ptr = NULL;
@@ -35,6 +36,7 @@ void main()
         printf("5.insert after the element\n");
         printf("6.delete at first\n");
         printf("7.delete at end\n");
+        printf("8.search element\n");
         printf("enter the choice\n");
         scanf("%d", &ch);
 
@@ -71,6 +73,11 @@ void main()
         case 7:
             deleteAtEnd(&head, &tail);
             break;
+        case 8:
+            printf("enter the element you want to search\n");
+            scanf("%d", &data);
+            search(head, data);
+            break;
 
         default:
             break;
@@ -80,7 +87,7 @@ void main()
 
 void deleteAtEnd(node **head, node **tail)
 {
-     if (*head == NULL)
+    if (*head == NULL)
     {
         printf("no element\n");
         return;
@@ -103,6 +110,30 @@ void deleteAtEnd(node **head, node **tail)
     }
 }
 
+void search(node *head, int data)
+{
+    if (head == NULL)
+    {
+        printf("no element\n");
+        return;
+    }
+    temp=head;
+    while (temp != NULL)
+    {
+        if ( temp->info==data)
+        {
+            printf("data found\n");
+            break;
+        }
+        temp = temp->next;
+    }
+
+    if (temp == NULL)
+    {
+        printf("no element found\n");
+        return;
+    }
+}
 void inserAtFirst(node **head, node **tail, int data)
 {
     temp = (node *)malloc(sizeof(node));
