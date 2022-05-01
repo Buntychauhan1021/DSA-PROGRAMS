@@ -86,8 +86,15 @@ void peek()
 void display()
 {
     int i;
+    if (top == -1)
+    {
+        printf("stack is empty\n");
+    }
+    else
+    {
     for (i = top; i >= 0; i--)
     {
         printf("element : %d\n", stack[i]);
+    }
     }
 }
