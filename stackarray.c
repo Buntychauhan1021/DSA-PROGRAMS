@@ -92,9 +92,9 @@ void display()
     }
     else
     {
-    for (i = top; i >= 0; i--)
-    {
-        printf("element : %d\n", stack[i]);
-    }
+        for (i = top; i >= 0; i--)
+        {
+            printf("element : %d\n", stack[i]);
+        }
     }
 }
