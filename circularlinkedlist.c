@@ -4,6 +4,7 @@ struct node {
     int data;
     struct node *next;
 };
+//bunty chauhan
 int main(){
 struct node *ptr ,*head,*p;
     int ch;
