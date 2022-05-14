@@ -97,4 +97,4 @@ void display()
             printf("element : %d\n", stack[i]);
         }
     }
-}
+} 

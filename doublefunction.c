@@ -124,7 +124,7 @@ void search(node *head, int data)
         {
             printf("data found\n");
             break;
-        }
+        } 
         temp = temp->next;
     }
 
@@ -221,19 +221,35 @@ void insertAfterSpecificElement(node *head, node **tail, int data)
         printf("Enter the data you want to insert\n");
         scanf("%d", &data);
         temp = (node *)(malloc(sizeof(node)));
-        temp->info = data;
-        temp->prev = head;
-        temp->next = head->next;
-        // if (head->next == NULL)
-        // {
-        //     head->next = temp;
-        //     (*tail) = temp;
-        //     printf("Node Insert Successfully\n");
-        //     return;
-        // }
-        head->next = temp;
-        // (temp->next)->prev = temp;
-        // printf("Node Insert Successfully\n");
+        temp->info=data;
+        if (head->next==NULL)
+        {
+            temp->next=NULL;
+            head->next=ptr;
+            ptr->prev=*tail;
+            *tail=temp;
+        }
+        else
+        {
+            temp->prev=head;
+            temp->next=head->next;
+            (head->next)->prev=temp;
+            head->next=temp;
+        }
+        
+        // temp->info = data;
+        // temp->prev = head;
+        // temp->next = head->next;
+        // // if (head->next == NULL)
+        // // {
+        // //     head->next = temp;
+        // //     (*tail) = temp;
+        // //     printf("Node Insert Successfully\n");
+        // //     return;
+        // // }
+        // head->next = temp;
+        // // (temp->next)->prev = temp;
+        // // printf("Node Insert Successfully\n");
     }
 }
 void deleteAtFirst(node **head, node **tail)
