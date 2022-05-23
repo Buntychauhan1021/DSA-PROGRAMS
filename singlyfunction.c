@@ -297,3 +297,4 @@ void insertAfterElement(node **head, int data)
         ptr->next = temp;
     }
 }
+ 

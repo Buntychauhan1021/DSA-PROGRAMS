@@ -84,6 +84,57 @@ void main()
         }
     }
 }
+void deletetAfterSpecificElement(node *head, node **tail, int data)
+{
+    if (head == NULL)
+    {
+        printf("No data Found\n");
+        return;
+    }
+    while (head != NULL)
+    {
+        if (head->info == data)
+        {
+           break;
+        }
+        head = head->next;
+    }
+    if (head == NULL)
+    {
+        printf("Element not found");
+        return;
+    }
+    else
+    {  
+        if ((head->next)->next==NULL)
+        {
+           
+           temp= head->next;
+           head->next=NULL;
+           *tail=head;
+            free(temp);
+        }
+        else
+        {
+            temp=head->next;
+            head->next=
+        }
+        
+        // temp->info = data;
+        // temp->prev = head;
+        // temp->next = head->next;
+        // // if (head->next == NULL)
+        // // {
+        // //     head->next = temp;
+        // //     (*tail) = temp;
+        // //     printf("Node Insert Successfully\n");
+        // //     return;
+        // // }
+        // head->next = temp;
+        // // (temp->next)->prev = temp;
+        // // printf("Node Insert Successfully\n");
+    }
+}
 
 void deleteAtEnd(node **head, node **tail)
 {
@@ -206,8 +257,7 @@ void insertAfterSpecificElement(node *head, node **tail, int data)
     {
         if (head->info == data)
         {
-
-            break;
+           break;
         }
         head = head->next;
     }

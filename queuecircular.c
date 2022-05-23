@@ -42,6 +42,9 @@ int main()
         }
     }
 }
+
+
+
 void enqueue(int x)
 {
     if (front==1&&rear=N||front=rear+1)
