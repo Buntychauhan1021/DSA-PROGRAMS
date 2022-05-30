@@ -1,8 +1,8 @@
 //selection sort
 #include <stdio.h>
 #include <conio.h>
-void insertion(int a[40], int n);
-int max1(int a[40],int n);
+void selection(int a[40], int n);
+int max(int a[40],int n);
 void main()
 {
     int i, n;
@@ -19,7 +19,7 @@ void main()
     {
         printf("%d\t",a[i]);
     }
-    insertion(a, n);
+    selection(a, n);
     printf("\nelement after sorting\n");
     for (i = 0; i < n; i++)
     {
@@ -27,22 +27,37 @@ void main()
     }
 }
 
-void insertion(int a[70],int n)
+void selection(int a[40],int n)
 {
-       int temp;
-       int i,j;
-       for ( i = 1; i < n; i++)
-       {
-       temp=a[i];
-       j=i-1;
-       while (a[j]>temp && j>=0)
-       {
-           a[j+1]=a[j];
-           j--;
-
-       }
-       a[j+1]=temp;
-           
-       }
-       
+    int i,loc=0,temp=0;
+    for ( i = n-1; i >=1; i--)
+    {
+        
+        
+        loc=max(a,i);
+        temp=a[loc];
+        a[loc]=a[i];
+        a[i]=temp;
+     
+    }
+    
 }
+
+int max(int a[40],int n)
+{
+    int max=0; 
+    int i;
+    for ( i = 1; i <=n; i++)
+    {
+      if (a[i]>a[max])
+      {
+          max=i;
+      } 
+      
+       
+    }
+    return max;
+    
+}
+
+
